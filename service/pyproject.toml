@@ -1,0 +1,31 @@
+[project]
+name = "viture-teleop"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "kelsorj", email = "kelsorj@users.noreply.github.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "dex-retargeting>=0.5.0",
+    "mujoco>=3.7.0",
+    "numpy>=2.2,<2.4",
+    "pydantic>=2.13.3",
+    "torch>=2.11.0",
+    "websockets>=16.0",
+]
+
+[project.scripts]
+viture-teleop = "viture_teleop:main"
+
+[build-system]
+requires = ["uv_build>=0.10.0,<0.11.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pillow>=12.2.0",
+    "pytest>=9.0.3",
+    "pytest-asyncio>=1.3.0",
+]

@@ -1,0 +1,78 @@
+# OS
+.DS_Store
+*.swp
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# uv / venv
+.venv/
+service/.venv/
+
+# Generated artifacts
+artifacts/*.png
+artifacts/*.jsonl
+
+# Unity (the unity-app/.gitignore handles per-project ignores; this is a backstop)
+unity-app/[Ll]ibrary/
+unity-app/[Tt]emp/
+unity-app/[Oo]bj/
+unity-app/[Bb]uild/
+unity-app/[Bb]uilds/
+unity-app/[Ll]ogs/
+unity-app/[Uu]ser[Ss]ettings/
+unity-app/.utmp/
+
+# Editor metadata
+.idea/
+.vscode/
+*.csproj
+*.sln
+*.user
+
+# Vendor dependencies
+#
+# Viture SDK is proprietary and non-redistributable per its license — must
+# be obtained separately from developer.viture.com and dropped into:
+#   vendor/com.viture.xr/      (Unity package, referenced from Packages/manifest.json)
+#   vendor/viture_native_sdk/  (native libglasses SDK, only needed for native testing)
+vendor/com.viture.xr/
+vendor/viture_native_sdk/
+
+# Local clone of dex_retargeting source — install via pip (uv handles it),
+# this is just a checkout for poking at internals.
+vendor/dex_retargeting_repo/
+
+# mujoco_menagerie: 2 GB of robots we don't use. Keep only the shadow_hand
+# assets (Apache 2.0, ~5 MB) which the simulator actually loads. Anyone who
+# wants the rest can `git clone https://github.com/google-deepmind/mujoco_menagerie`.
+vendor/mujoco_menagerie/*
+!vendor/mujoco_menagerie/shadow_hand/
+!vendor/mujoco_menagerie/LICENSE
+!vendor/mujoco_menagerie/README.md
+
+# dex_urdf: 264 MB of URDFs we don't use. Keep only shadow_hand (~7 MB).
+vendor/dex_urdf/*
+!vendor/dex_urdf/LICENSE
+!vendor/dex_urdf/README.md
+!vendor/dex_urdf/robots/
+vendor/dex_urdf/robots/*
+!vendor/dex_urdf/robots/hands/
+vendor/dex_urdf/robots/hands/*
+!vendor/dex_urdf/robots/hands/shadow_hand/
+
+# Build outputs
+*.apk
+*.aab
+*.app
+
+# Imported Viture SDK samples — these are part of the proprietary Unity
+# package and shouldn't be redistributed. If you need them, re-import via
+# Window → Package Manager → VITURE XR Plugin → Samples.
+unity-app/Assets/Samples/VITURE*

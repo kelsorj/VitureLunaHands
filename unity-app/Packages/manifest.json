@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "com.viture.xr": "file:../../vendor/com.viture.xr",
+    "com.unity.xr.hands": "1.5.1",
+    "com.unity.xr.management": "4.5.1",
+    "com.unity.xr.interaction.toolkit": "3.0.5",
+    "com.unity.nuget.newtonsoft-json": "3.2.1",
+    "com.endel.nativewebsocket": "https://github.com/endel/NativeWebSocket.git#upm"
+  },
+  "scopedRegistries": []
+}
